@@ -25,6 +25,7 @@ To get started, you'll need the sheet from last year. Instead of building everyt
 <br/>
 
 ## **The Logic**
+***Important video to complement this documentation (Thanks, Alfonso!)***
 
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/rVOnnysEqlI" 
