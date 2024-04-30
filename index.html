@@ -34,10 +34,16 @@
                                 <a href="." class="nav-link">Home</a>
                             </li>
                             <li class="navitem">
-                                <a href="about/" class="nav-link">About</a>
+                                <a href="getting_started/" class="nav-link">Getting Started!</a>
                             </li>
                             <li class="navitem">
-                                <a href="getting_started/" class="nav-link">Getting started</a>
+                                <a href="form_scripts/" class="nav-link">Form Scripts</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="sheet_scripts/" class="nav-link">Sheet Scripts</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="about/" class="nav-link">About</a>
                             </li>
                         </ul>
 
@@ -53,7 +59,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="about/" class="nav-link">
+                                <a rel="next" href="getting_started/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -80,7 +86,7 @@
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#important-spreadsheets-and-their-content-and-why-they-are-important" class="nav-link">Important spreadsheets and their content and why they are important:</a>
+            <li class="nav-item" data-level="2"><a href="#important-sheets" class="nav-link">Important Sheets</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -99,26 +105,44 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="welcome-to-the-payroll-system-for-non-paycom-students">Welcome to the Payroll System For Non-Paycom students!</h2>
-<p>This is the documentation for Automation of the different sheets regarding Bill.com to help you navigate, understand, pull information, make updates, or get started in the beginnig of each year.
-The main sheet is here: <a href="https://docs.google.com/spreadsheets/d/1vwHoN5UWt_E6wVMi75IQpFi5OYvGdYd--cWBqI4lHpw/edit">Approval Sheet of 2023/2024</a>.
-To get started, you would need the sheet of last year. Instead of building everything from scratch, we clone the sheet of the previous year with the automation scripts and just update the necessary details.</p>
-<h2 id="important-spreadsheets-and-their-content-and-why-they-are-important">Important spreadsheets and their content and why they are important:</h2>
+<h2 id="welcome-to-the-payroll-system-for-non-paycom-students"><strong>Welcome to the Payroll System For Non-Paycom students!</strong></h2>
+<p>This is the documentation for automation of the different sheets regarding Bill.com. It is designed to help you navigate, understand, pull information, make updates, or get started at the beginning of each year.</p>
+<p>The main sheet is here: <a href="https://docs.google.com/spreadsheets/d/1vwHoN5UWt_E6wVMi75IQpFi5OYvGdYd--cWBqI4lHpw/edit">Approval Sheet of 2023/2024</a>.</p>
+<p>To get started, you'll need the sheet from last year. Instead of building everything from scratch, we clone the sheet of the previous year, along with the automation scripts, and then update the necessary details.</p>
+<h2 id="important-sheets"><strong>Important Sheets</strong></h2>
+<p><em>Important spreadsheets, their content, and why they are important:</em></p>
 <ol>
-<li>The Approval Sheet</li>
-<li>The Position tracker</li>
-<li>BDC payment summary</li>
-<li>Bank Information sheet</li>
-<li>W8/9</li>
+<li><strong>Approval Sheet:</strong><ul>
+<li>The main sheet where students submit hours and managers approve them. Reminders are sent automatically from the scripts of this sheet.</li>
+</ul>
+</li>
+<li><strong>Position Tracker:</strong><ul>
+<li>Contains all the information about students' positions, personal information, and managers' information.</li>
+</ul>
+</li>
+<li><strong>BDC Payment Summary:</strong><ul>
+<li>Details payments made to students through <a href="https://Bill.com">Bill.com</a>.</li>
+</ul>
+</li>
+<li><strong>Bank Information Sheet:</strong><ul>
+<li>Where students submit their bank account information, which is used to set up their account on Bill.com.</li>
+</ul>
+</li>
+<li><strong>W8/9 Folder:</strong><ul>
+<li>A Google Drive folder in the <code>Wire</code> folder where W8/9 forms are collected. Ensure any forms submitted by students are saved in this folder.</li>
+</ul>
+</li>
 </ol>
-<h2 id="the-logic">The Logic</h2>
+<p><br/></p>
+<h2 id="the-logic"><strong>The Logic</strong></h2>
 <iframe width="560" height="315"
 src="https://www.youtube.com/embed/rVOnnysEqlI" 
 frameborder="0" 
 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
 allowfullscreen></iframe>
-
-<h2 id="project-layout">Project layout</h2>
+<p><br/></p>
+<p><strong><em>For Development Team:</em></strong></p>
+<h2 id="project-layout"><strong>Project layout</strong></h2>
 <pre><code>mkdocs.yml    # The configuration file.
 docs/
     index.md  # The documentation homepage.
@@ -206,5 +230,5 @@ docs/
 
 <!--
 MkDocs version : 1.5.3
-Build Date UTC : 2024-04-30 14:22:19.834551+00:00
+Build Date UTC : 2024-04-30 15:15:16.828231+00:00
 -->
