@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Getting started - Minerva Non-Paycom Payroll</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">Minerva Non-Paycom Payroll</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">About</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Getting started</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../about/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#a-quick-guide-on-how-to-get-started" class="nav-link">A quick guide on how to get started!</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#accessing-scripts-approval-sheet-and-ws-payroll-log-form" class="nav-link">Accessing Scripts, Approval Sheet and WS Payroll Log Form</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#quick-journey" class="nav-link">Quick journey</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#things-to-update-on-arrival" class="nav-link">Things to update on arrival</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#important-spreadsheets-and-their-content-and-why-they-are-important" class="nav-link">Important spreadsheets and their content and why they are important:</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="a-quick-guide-on-how-to-get-started">A quick guide on how to get started!</h2>
+<h2 id="accessing-scripts-approval-sheet-and-ws-payroll-log-form">Accessing Scripts, Approval Sheet and WS Payroll Log Form</h2>
+<p><a href="https://docs.google.com/spreadsheets/d/1vwHoN5UWt_E6wVMi75IQpFi5OYvGdYd--cWBqI4lHpw/edit">Approval Sheet of 2023/2024</a></p>
+<p>This spreadsheet is the starting point. This sheet is Paycom for students not on Paycom. There we collect the data for the students' hours and managers also approve/remove hours from students.</p>
+<p>Also, the script of the Spreadsheet I am referring to is the Google Apps Script associated with the Approval Sheet. You can find it by clicking on the Extensions tab in the spread sheet and then Apps Script.</p>
+<p>For the script of the WS Payroll Log Form, you can find it in the editing page of the form by the three dots in the top right -&gt; Script Editor.</p>
+<p>Also, the meaning of the function runs every week, two weeks etc... is that there is a trigger by time for these functions in the Google Apps Script editor.</p>
+<h2 id="quick-journey">Quick journey</h2>
+<h3 id="students-submission">Students submission</h3>
+<p>By the end of the pay period, the students are asked to submit the hours they worked during that pay period, through this <a href="https://forms.gle/jCmz9uQmdrzB79Zn8">WS Payroll Log Form</a>. The responses are collected in a sheet in the Approval Sheet spread sheet called <code>Submissions_Source</code>. This is not what we process. Another sheet called <code>Submissions</code> imports this data and associates a key with each entry at <em>Column(A) &amp; Column(J)</em>. The key is as follows: "[student email address] - [PP code]", e.g. "alaa@uni.minerva.edu - PP1" for the submission of Alaa in pay period 1.</p>
+<p>Before the submission day (Thursday), students are sent an automatic reminder to submit their hours. You can find the function in the script of the spreadsheet as a function called <code>contractorsSubmissionReminder</code> which runs every two weeks to remind them.</p>
+<h3 id="managers-approval">Managers approval</h3>
+<p>This data is imported (using the key defined above) into the most important sheet which is the first sheet in the spreadsheet, typically called by the name of the pay period it refers to, e.g. PP1 for submissions of PP1. After the submission day (Friday end of Pay period), the google form is automatically locked using the <code>restrict</code> function in the script of the form.</p>
+<p>The managers get an automated email on Sunday to go ahead and approve/remove students' hours. This is done in the same sheet which is the first sheet in the spreadsheet. The function for sending the managers reminders is <code>managerApprovalReminder</code> in the spreadsheet script.</p>
+<h3 id="shifting-sheets">Shifting sheets</h3>
+<p>Managers receive the link to the spreadsheet and go and change the approval column of their interns to YES or NO. Then, on Tuesday/Wednesday, the sheet of the previous pay period is being locked, sent to the end of the sheet and another sheet is created for the current pay period. Let's say managers approved PP1, PP1's sheet go to the end and a new sheet is created for PP2. This process is done via the function <code>copySheet</code> in the script of the approval sheet.</p>
+<h3 id="students-come-back">Students come back</h3>
+<p>On the next Saturday which is mid of the pay period, the form for logging hours is unlocked, and the students are once again able to submit hours but for this pay period. On Thursday, 1 day before end of PP, they receive the reminder and the cycle goes on.</p>
+<h2 id="things-to-update-on-arrival">Things to update on arrival</h2>
+<ol>
+<li>The sheet <code>Config</code> in the Approval is very important. Please make sure it is always up to date. Look up the Position Tracker of the year or the Master DB for this one.</li>
+<li>Make sure the sudents names in the PP sheet in the very beginning of the spreadsheet is correct because it is not updated automatically (yet).</li>
+<li></li>
+</ol>
+<h2 id="important-spreadsheets-and-their-content-and-why-they-are-important">Important spreadsheets and their content and why they are important:</h2>
+<ol>
+<li>The Approval Sheet</li>
+<li>The Position tracker</li>
+<li>BDC payment summary</li>
+<li>Bank Information sheet</li>
+<li>W8/9</li>
+</ol></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
