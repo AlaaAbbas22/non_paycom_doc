@@ -8,7 +8,7 @@
         
         
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Getting Started! - Minerva Non-Paycom Payroll</title>
+        <title>Sheet Scripts - Minerva Non-Paycom Payroll</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -33,14 +33,14 @@
                             <li class="navitem">
                                 <a href=".." class="nav-link">Home</a>
                             </li>
-                            <li class="navitem active">
-                                <a href="./" class="nav-link">Getting Started!</a>
+                            <li class="navitem">
+                                <a href="../getting_started/" class="nav-link">Getting Started!</a>
                             </li>
                             <li class="navitem">
                                 <a href="../form_scripts/" class="nav-link">Form Scripts</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../sheet_scripts/" class="nav-link">Sheet Scripts</a>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">Sheet Scripts</a>
                             </li>
                             <li class="navitem">
                                 <a href="../about/" class="nav-link">About</a>
@@ -54,12 +54,12 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a rel="prev" href=".." class="nav-link">
+                                <a rel="prev" href="../form_scripts/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a rel="next" href="../form_scripts/" class="nav-link">
+                                <a rel="next" href="../about/" class="nav-link">
                                     Next <i class="fa fa-arrow-right"></i>
                                 </a>
                             </li>
@@ -81,27 +81,12 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#a-quick-guide-on-how-to-get-started" class="nav-link">A Quick Guide on How to Get Started!</a>
+            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#accessing-the-sheets" class="nav-link">Accessing the Sheets</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#quick-journey" class="nav-link">Quick Journey</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#actions" class="nav-link">Actions</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            
-            <li class="nav-item" data-level="2"><a href="#important-sheets" class="nav-link">Important Sheets</a>
+            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -110,71 +95,9 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="a-quick-guide-on-how-to-get-started"><strong><em>A Quick Guide on How to Get Started!</em></strong></h2>
-<h2 id="accessing-the-sheets"><strong>Accessing the Sheets</strong></h2>
-<p><em>Accessing Scripts, Approval Sheet, and WS Payroll Log Form</em></p>
-<p><a href="https://docs.google.com/spreadsheets/d/1vwHoN5UWt_E6wVMi75IQpFi5OYvGdYd--cWBqI4lHpw/edit">Approval Sheet of 2023/2024</a></p>
-<ul>
-<li>This spreadsheet is the starting point. It serves as Paycom for students not on Paycom. It collects data for the students' hours, and managers also approve or remove hours from students.</li>
-<li>The script of the spreadsheet is the Google Apps Script associated with the Approval Sheet. You can find it by clicking on the <strong>Extensions</strong> tab in the spreadsheet and then selecting <strong>Apps Script</strong>.</li>
-<li>The script for the WS Payroll Log Form is in the editing page of the form. Click the three dots in the top-right corner, then select <strong>Script Editor</strong>.</li>
-<li>When functions mention they run every week, two weeks, etc., it indicates a time-based trigger set in the Google Apps Script editor.</li>
-</ul>
-<h2 id="quick-journey"><strong>Quick Journey</strong></h2>
-<p><em>Summary of the Process</em></p>
-<h3 id="student-submissions">Student Submissions</h3>
-<ul>
-<li>By the end of the pay period, students submit the hours they worked through the <a href="https://forms.gle/jCmz9uQmdrzB79Zn8">WS Payroll Log Form</a>. The responses are collected in a sheet within the Approval Sheet spreadsheet called <code>Submissions_Source</code>. This is not what gets processed.</li>
-<li>Another sheet called <code>Submissions</code> imports this data and associates a key with each entry at <em>Column A</em> and <em>Column J</em>. The key is structured as: "[student email address] - [PP code]", for example, "alaa@uni.minerva.edu - PP1".</li>
-<li>Before submission day (Thursday), an automatic reminder is sent to students to submit their hours. This reminder is managed by the <code>contractorsSubmissionReminder</code> function, which runs every two weeks.</li>
-</ul>
-<h3 id="managers-approval">Managers' Approval</h3>
-<ul>
-<li>This data is imported into the first sheet in the spreadsheet, typically named after the pay period it refers to (e.g., PP1 for submissions of PP1). After the submission day (Friday), the Google form is automatically locked using the <code>restrict</code> function.</li>
-<li>Managers receive an automated email on Sunday to approve or remove students' hours. This occurs in the same sheet, typically the first sheet. The function for sending manager reminders is <code>managerApprovalReminder</code>.</li>
-</ul>
-<h3 id="shifting-sheets">Shifting Sheets</h3>
-<ul>
-<li>Managers approve hours by changing the approval column for their interns to YES or NO. On Tuesday/Wednesday, the sheet for the previous pay period is locked, moved to the end, and a new sheet is created for the current pay period. This is handled by the <code>copySheet</code> function.</li>
-<li>For example, if managers approve PP1, that sheet is locked and sent to the end, then a new sheet is created for PP2.</li>
-</ul>
-<h3 id="students-return">Students' Return</h3>
-<ul>
-<li>On the following Saturday, the form for logging hours is unlocked, allowing students to submit hours for the new pay period. On Thursday, one day before the end of the pay period, a reminder is sent, and the cycle continues.</li>
-</ul>
-<h2 id="actions"><strong>Actions</strong></h2>
-<p><em>What to update when you arrive?</em></p>
-<ol>
-<li><strong>Config Sheet:</strong> This sheet in the Approval Sheet is crucial. Ensure it is always up-to-date. Check the Position Tracker of the year or the Master DB for accuracy.</li>
-<li><strong>PP Sheet:</strong> Ensure the students' names in the PP sheet (at the beginning of the spreadsheet) are correct, as they are not updated automatically.</li>
-<li><strong>YTD Analysis:</strong> Verify that names and emails are accurate.</li>
-<li><strong>Submissions_Source:</strong> Ensure this sheet, where hours are submitted, is connected to the correct source. It should pull the most accurate information.</li>
-<li><strong>Triggers:</strong> Ensure the triggers on the Approval Sheet are correctly configured. These can be found in the scripts.</li>
-</ol>
-<h2 id="important-sheets"><strong>Important Sheets</strong></h2>
-<p><em>Important spreadsheets, their content, and why they are important:</em></p>
-<ol>
-<li><strong>Approval Sheet:</strong><ul>
-<li>The main sheet where students submit hours and managers approve them. Reminders are sent automatically from the scripts of this sheet.</li>
-</ul>
-</li>
-<li><strong>Position Tracker:</strong><ul>
-<li>Contains all the information about students' positions, personal information, and managers' information.</li>
-</ul>
-</li>
-<li><strong>BDC Payment Summary:</strong><ul>
-<li>Details payments made to students through <a href="https://Bill.com">Bill.com</a>.</li>
-</ul>
-</li>
-<li><strong>Bank Information Sheet:</strong><ul>
-<li>Where students submit their bank account information, which is used to set up their account on Bill.com.</li>
-</ul>
-</li>
-<li><strong>W8/9 Folder:</strong><ul>
-<li>A Google Drive folder in the <code>Wire</code> folder where W8/9 forms are collected. Ensure any forms submitted by students are saved in this folder.</li>
-</ul>
-</li>
-</ol></div>
+<h2 id="introduction">Introduction</h2>
+<p>Here will be the details of the code being used. It will be very detailed. Knowledge about JavaScript will be valuable though not necessary. This page has the code for the automation of the <code>Approval Sheet</code>. The explanations are related to Handling Students submissions, managers approval, and maintaing the sheet of pay periods. For the scripts related to the google form, go <a href="/non_paycom_doc/form_scripts">here</a></p>
+<h2 id="code">Code</h2></div>
             </div>
         </div>
 

@@ -1,49 +1,53 @@
-## A quick guide on how to get started!
+## ***A Quick Guide on How to Get Started!***
 
-## Accessing Scripts, Approval Sheet and WS Payroll Log Form
+## **Accessing the Sheets**
+*Accessing Scripts, Approval Sheet, and WS Payroll Log Form*
 
 [Approval Sheet of 2023/2024](https://docs.google.com/spreadsheets/d/1vwHoN5UWt_E6wVMi75IQpFi5OYvGdYd--cWBqI4lHpw/edit)
 
-This spreadsheet is the starting point. This sheet is Paycom for students not on Paycom. There we collect the data for the students' hours and managers also approve/remove hours from students.
+- This spreadsheet is the starting point. It serves as Paycom for students not on Paycom. It collects data for the students' hours, and managers also approve or remove hours from students.
+- The script of the spreadsheet is the Google Apps Script associated with the Approval Sheet. You can find it by clicking on the **Extensions** tab in the spreadsheet and then selecting **Apps Script**.
+- The script for the WS Payroll Log Form is in the editing page of the form. Click the three dots in the top-right corner, then select **Script Editor**.
+- When functions mention they run every week, two weeks, etc., it indicates a time-based trigger set in the Google Apps Script editor.
 
-Also, the script of the Spreadsheet I am referring to is the Google Apps Script associated with the Approval Sheet. You can find it by clicking on the Extensions tab in the spread sheet and then Apps Script.
+## **Quick Journey**
+*Summary of the Process*
 
-For the script of the WS Payroll Log Form, you can find it in the editing page of the form by the three dots in the top right -> Script Editor.
+### Student Submissions
+- By the end of the pay period, students submit the hours they worked through the [WS Payroll Log Form](https://forms.gle/jCmz9uQmdrzB79Zn8). The responses are collected in a sheet within the Approval Sheet spreadsheet called `Submissions_Source`. This is not what gets processed.
+- Another sheet called `Submissions` imports this data and associates a key with each entry at _Column A_ and _Column J_. The key is structured as: "[student email address] - [PP code]", for example, "alaa@uni.minerva.edu - PP1".
+- Before submission day (Thursday), an automatic reminder is sent to students to submit their hours. This reminder is managed by the `contractorsSubmissionReminder` function, which runs every two weeks.
 
-Also, the meaning of the function runs every week, two weeks etc... is that there is a trigger by time for these functions in the Google Apps Script editor.
+### Managers' Approval
+- This data is imported into the first sheet in the spreadsheet, typically named after the pay period it refers to (e.g., PP1 for submissions of PP1). After the submission day (Friday), the Google form is automatically locked using the `restrict` function.
+- Managers receive an automated email on Sunday to approve or remove students' hours. This occurs in the same sheet, typically the first sheet. The function for sending manager reminders is `managerApprovalReminder`.
 
-## Quick journey
+### Shifting Sheets
+- Managers approve hours by changing the approval column for their interns to YES or NO. On Tuesday/Wednesday, the sheet for the previous pay period is locked, moved to the end, and a new sheet is created for the current pay period. This is handled by the `copySheet` function.
+- For example, if managers approve PP1, that sheet is locked and sent to the end, then a new sheet is created for PP2.
 
-### Students submission
+### Students' Return
+- On the following Saturday, the form for logging hours is unlocked, allowing students to submit hours for the new pay period. On Thursday, one day before the end of the pay period, a reminder is sent, and the cycle continues.
 
-By the end of the pay period, the students are asked to submit the hours they worked during that pay period, through this [WS Payroll Log Form](https://forms.gle/jCmz9uQmdrzB79Zn8). The responses are collected in a sheet in the Approval Sheet spread sheet called `Submissions_Source`. This is not what we process. Another sheet called `Submissions` imports this data and associates a key with each entry at _Column(A) & Column(J)_. The key is as follows: "[student email address] - [PP code]", e.g. "alaa@uni.minerva.edu - PP1" for the submission of Alaa in pay period 1.
+## **Actions**
+*What to update when you arrive?*
 
-Before the submission day (Thursday), students are sent an automatic reminder to submit their hours. You can find the function in the script of the spreadsheet as a function called `contractorsSubmissionReminder` which runs every two weeks to remind them.
+1. **Config Sheet:** This sheet in the Approval Sheet is crucial. Ensure it is always up-to-date. Check the Position Tracker of the year or the Master DB for accuracy.
+2. **PP Sheet:** Ensure the students' names in the PP sheet (at the beginning of the spreadsheet) are correct, as they are not updated automatically.
+3. **YTD Analysis:** Verify that names and emails are accurate.
+4. **Submissions_Source:** Ensure this sheet, where hours are submitted, is connected to the correct source. It should pull the most accurate information.
+5. **Triggers:** Ensure the triggers on the Approval Sheet are correctly configured. These can be found in the scripts.
 
-### Managers approval
+## **Important Sheets**
+*Important spreadsheets, their content, and why they are important:*
 
-This data is imported (using the key defined above) into the most important sheet which is the first sheet in the spreadsheet, typically called by the name of the pay period it refers to, e.g. PP1 for submissions of PP1. After the submission day (Friday end of Pay period), the google form is automatically locked using the `restrict` function in the script of the form.
-
-The managers get an automated email on Sunday to go ahead and approve/remove students' hours. This is done in the same sheet which is the first sheet in the spreadsheet. The function for sending the managers reminders is `managerApprovalReminder` in the spreadsheet script.
-
-### Shifting sheets
-
-Managers receive the link to the spreadsheet and go and change the approval column of their interns to YES or NO. Then, on Tuesday/Wednesday, the sheet of the previous pay period is being locked, sent to the end of the sheet and another sheet is created for the current pay period. Let's say managers approved PP1, PP1's sheet go to the end and a new sheet is created for PP2. This process is done via the function `copySheet` in the script of the approval sheet.
-
-### Students come back
-
-On the next Saturday which is mid of the pay period, the form for logging hours is unlocked, and the students are once again able to submit hours but for this pay period. On Thursday, 1 day before end of PP, they receive the reminder and the cycle goes on.
-
-## Things to update on arrival
-
-1. The sheet `Config` in the Approval is very important. Please make sure it is always up to date. Look up the Position Tracker of the year or the Master DB for this one.
-2. Make sure the sudents names in the PP sheet in the very beginning of the spreadsheet is correct because it is not updated automatically (yet).
-3. 
-
-## Important spreadsheets and their content and why they are important:
-
-1. The Approval Sheet
-2. The Position tracker
-3. BDC payment summary
-4. Bank Information sheet
-5. W8/9
+1. **Approval Sheet:**
+    - The main sheet where students submit hours and managers approve them. Reminders are sent automatically from the scripts of this sheet.
+2. **Position Tracker:**
+    - Contains all the information about students' positions, personal information, and managers' information.
+3. **BDC Payment Summary:**
+    - Details payments made to students through [Bill.com](https://Bill.com).
+4. **Bank Information Sheet:**
+    - Where students submit their bank account information, which is used to set up their account on Bill.com.
+5. **W8/9 Folder:**
+    - A Google Drive folder in the `Wire` folder where W8/9 forms are collected. Ensure any forms submitted by students are saved in this folder.

@@ -1,1 +1,7 @@
 site_name: Minerva Non-Paycom Payroll
+nav:
+  - Home: index.md
+  - Getting Started!: getting_started.md
+  - Form Scripts: form_scripts.md
+  - Sheet Scripts: sheet_scripts.md
+  - About: about.md
