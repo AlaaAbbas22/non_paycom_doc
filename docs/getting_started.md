@@ -1,5 +1,5 @@
 ## ***A Quick Guide on How to Get Started!***
-
+- ***Have a look at the get started of the [form scripts](/non_paycom_doc/form_scripts) and [sheet scripts](/non_paycom_doc/sheet_scripts) for a correct set up for the automation, as well.***
 ## **Accessing the Sheets**
 *Accessing Scripts, Approval Sheet, and WS Payroll Log Form*
 
@@ -37,6 +37,7 @@
 3. **YTD Analysis:** Verify that names and emails are accurate.
 4. **Submissions_Source:** Ensure this sheet, where hours are submitted, is connected to the correct source. It should pull the most accurate information.
 5. **Triggers:** Ensure the triggers on the Approval Sheet are correctly configured. These can be found in the scripts.
+6. **Scripts:** Have a look at the get started of the [form scripts](/non_paycom_doc/form_scripts) and [sheet scripts](/non_paycom_doc/sheet_scripts) for a correct set up for the automation, as well.
 
 ## **Important Sheets**
 *Important spreadsheets, their content, and why they are important:*
