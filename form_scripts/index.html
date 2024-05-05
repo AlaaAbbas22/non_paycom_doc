@@ -81,7 +81,17 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
+            <li class="nav-item" data-level="2"><a href="#quick-get-started" class="nav-link">Quick get started</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#acessing-it" class="nav-link">Acessing it</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -90,14 +100,60 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            
+            <li class="nav-item" data-level="2"><a href="#triggers" class="nav-link">Triggers</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
                     <div class="col-md-9" role="main">
 
+<h2 id="quick-get-started">Quick get started</h2>
+<ul>
+<li><strong><em>Update the links and sheet ids</em></strong></li>
+</ul>
 <h2 id="introduction">Introduction</h2>
 <p>Here will be the details of the code being used. It will be very detailed. Knowledge about JavaScript will be valuable though not necessary. This page has the code for the automation of the <code>Payroll Log Form</code>. The explanations are related to handling closure/opening the google form and editing the questions. For the scripts related to the Approval Sheet, go <a href="/non_paycom_doc/sheet_scripts">here</a></p>
-<h2 id="code">Code</h2></div>
+<h2 id="acessing-it">Acessing it</h2>
+<ul>
+<li><strong><em>You can find the code in the scripts of the form.</em></strong></li>
+</ul>
+<p><img alt="image.png" src="https://i.postimg.cc/yxsJwmVP/image.png" /></p>
+<ul>
+<li><strong><em>This is what you would see:</em></strong></li>
+</ul>
+<p><img alt="image.png" src="https://i.postimg.cc/8z971Qps/image.png" /></p>
+<h2 id="code">Code</h2>
+<ul>
+<li><strong><em>For the first 2 lines, this is the set up for the name of the config sheet which has the dates and details about current pay period. This is a sheet in the approval spreadsheet.</em></strong></li>
+</ul>
+<p><img alt="image.png" src="https://i.postimg.cc/RF9VFvjC/image.png" /></p>
+<ul>
+<li>
+<p><strong><em><code>updateForm</code> function: This function grabs the current pay period details (PP number, start date, end date, etc...) from the config sheet and update the form.</em></strong>
+<img alt="image.png" src="https://i.postimg.cc/R0142jqk/image.png" /></p>
+</li>
+<li>
+<p><strong><em>Sample Config Sheet</em></strong>:</p>
+</li>
+</ul>
+<p><img alt="image.png" src="https://i.postimg.cc/L8LpZrkJ/image.png" /></p>
+<ul>
+<li><strong><em><code>restrict</code> function: This function closes the submission form on the saturday after the submission deadline and reopens it on the saturday of the next week.</em></strong></li>
+</ul>
+<p><img alt="image.png" src="https://i.postimg.cc/Kj6WG8HJ/image.png" /></p>
+<h2 id="triggers">Triggers</h2>
+<p>These triggers are the schedule where the functions actually run. Navigate to the triggers section on the left and add triggers by the button on the right.</p>
+<ul>
+<li><strong><em>Trigger for <code>restrict</code>: This function runs every week. One week it closes the form, while the other week, it reopens the form.</em></strong></li>
+</ul>
+<p><img alt="image.png" src="https://i.postimg.cc/BnqrXXvV/image.png" /></p>
+<ul>
+<li><strong><em>Trigger for <code>updateForm</code>: This function should run every two weeks to update the form with each pay period. However, there is no biweekly triggers and there is no harm from running it every week, so just keep it similar to the <code>restrict</code> function.</em></strong></li>
+</ul>
+<p><img alt="image.png" src="https://i.postimg.cc/xdBpyC0Y/image.png" /></p></div>
             </div>
         </div>
 
