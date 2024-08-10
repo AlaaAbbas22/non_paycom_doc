@@ -81,12 +81,30 @@
     <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="2"><a href="#introduction" class="nav-link">Introduction</a>
+            <li class="nav-item" data-level="1"><a href="#introduction" class="nav-link">Introduction</a>
               <ul class="nav flex-column">
               </ul>
             </li>
             
-            <li class="nav-item" data-level="2"><a href="#code" class="nav-link">Code</a>
+            <li class="nav-item" data-level="1"><a href="#accessing-it" class="nav-link">Accessing It</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#code" class="nav-link">Code</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#email-reminders" class="nav-link">Email Reminders</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#sheet" class="nav-link">Sheet</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="1"><a href="#triggers" class="nav-link">Triggers</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -95,9 +113,77 @@
 </div></div>
                     <div class="col-md-9" role="main">
 
-<h2 id="introduction">Introduction</h2>
+<h1 id="introduction">Introduction</h1>
 <p>Here will be the details of the code being used. It will be very detailed. Knowledge about JavaScript will be valuable though not necessary. This page has the code for the automation of the <code>Approval Sheet</code>. The explanations are related to Handling Students submissions, managers approval, and maintaing the sheet of pay periods. For the scripts related to the google form, go <a href="/non_paycom_doc/form_scripts">here</a></p>
-<h2 id="code">Code</h2></div>
+<h1 id="accessing-it">Accessing It</h1>
+<ul>
+<li><strong><em>You can find the code in the scripts of the form.</em></strong></li>
+</ul>
+<p><img alt="Code Access" src="https://i.postimg.cc/25XHmqq6/image.png" /></p>
+<ul>
+<li><strong><em>This is what you would see:</em></strong></li>
+</ul>
+<p><img alt="Code View" src="https://i.postimg.cc/0rRSCvzP/image.png" /></p>
+<h1 id="code">Code</h1>
+<h2 id="email-reminders">Email Reminders</h2>
+<ul>
+<li><strong><em>Definition of variables: defining the doc ids that have the format for the reminders to be sent to the students and managers. You might not need to update these ids but make sure to update the links in the documents.</em></strong></li>
+<li><a href="https://docs.google.com/document/d/1So9TL5JizGiL-8zzU8Pe5gdbjslG1gZh4MenBzwJVm4/edit">Manager reminder doc</a></li>
+<li><a href="https://docs.google.com/document/d/1wXBCgmtA15TbfYAOtPEzg7kMDATl0y_2LNowIlq1IEM/edit">Student reminder doc</a></li>
+<li>
+<p><code>listOfCCedAdmins</code> is a list of emails that will be cced in the reminder emails. 
+<img alt="alt text" src="../image.png" /></p>
+</li>
+<li>
+<p><strong><em><code>onlyUnique</code>: This is a helper function for filtering unique values. We use it to prevent sending multiple reminders to the same manager who has multiple interns in the sheet.</em></strong>
+<img alt="alt text" src="../image-1.png" /></p>
+</li>
+<li>
+<p><strong><em><code>getGoogleDocumentAsHTML</code>: This is a helper function for getting the reminder content from the docs referenced above.</em></strong>
+<img alt="alt text" src="../image-2.png" /></p>
+</li>
+<li>
+<p><strong><em><code>sendBulkEmails</code>: A helper function for sending emails to multiple students or managers.</em></strong>
+<img alt="alt text" src="../image-3.png" /></p>
+</li>
+<li>
+<p><strong><em><code>managerApprovalReminder</code>: A helper function for sending emails to multiple students or managers.</em></strong>
+<img alt="alt text" src="../image-4.png" /></p>
+</li>
+<li>
+<p><strong><em><code>contractorsSubmissionReminder</code>: A helper function for sending emails to multiple students or managers.</em></strong>
+<img alt="alt text" src="../image-6.png" /></p>
+</li>
+</ul>
+<h2 id="sheet">Sheet</h2>
+<ul>
+<li>
+<p><strong><em>Defining variables: The most important thing is to keep the position tracker url up to date.</em></strong>
+<img alt="alt text" src="../image-7.png" /></p>
+</li>
+<li>
+<p><strong><em><code>absoluteEditors</code>: These are the editors who will have edit access to previous pay periods' sheets. Changes are reflected in the future and are not retrospective.</em></strong>
+<img alt="alt text" src="../image-8.png" /></p>
+</li>
+<li>
+<p><strong><em><code>getSheetName</code>: Used to get the name of the sheet of the current pay period (the one just ending).</em></strong>
+<img alt="alt text" src="../image-9.png" /></p>
+</li>
+<li>
+<p><strong><em><code>getHardCopy</code>: Copying the actual values as a hard copy instead of copying sheets with formulas.</em></strong>
+<img alt="alt text" src="../image-10.png" /></p>
+</li>
+<li>
+<p><strong><em><code>putHardCopy</code>: Saving the copied sheet into a new sheet.</em></strong>
+<img alt="alt text" src="../image-11.png" /></p>
+</li>
+<li>
+<p><strong><em><code>sortByManagerName</code>: Sorting the sheet of the pay period by the managers names.</em></strong>
+<img alt="alt text" src="../image-12.png" /></p>
+</li>
+</ul>
+<h1 id="triggers">Triggers</h1>
+<p>These triggers define the schedule on which the functions run. Navigate to the triggers section on the left and add triggers using the blue button on the bottom right.</p></div>
             </div>
         </div>
 
