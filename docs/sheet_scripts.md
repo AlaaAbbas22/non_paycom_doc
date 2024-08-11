@@ -6,11 +6,12 @@ Here will be the details of the code being used. It will be very detailed. Knowl
 
 - ***You can find the code in the scripts of the form.***
 
-![Code Access](https://i.postimg.cc/25XHmqq6/image.png)
+![alt text](image-14.png)
 
 - ***This is what you would see:***
 
-![Code View](https://i.postimg.cc/0rRSCvzP/image.png)
+![alt text](image-13.png)
+
 
 # Code
 ## Email Reminders
