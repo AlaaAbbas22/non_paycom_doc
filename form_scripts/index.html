@@ -124,7 +124,7 @@
 <ul>
 <li><strong><em>This is what you would see:</em></strong></li>
 </ul>
-<p><img alt="alt text" src="../image-16.png" /></p>
+<p><img alt="alt text" src="../image-23.png" /></p>
 <h2 id="code">Code</h2>
 <ul>
 <li><strong><em>First 2 lines: These lines set up the name of the config sheet, which contains the dates and details about the current pay period. This is a sheet in the approval spreadsheet.</em></strong></li>
@@ -133,25 +133,25 @@
 <ul>
 <li><strong><em><code>updateForm</code> function: This function retrieves the current pay period details (PP number, start date, end date, etc.) from the config sheet and updates the form.</em></strong></li>
 </ul>
-<p><img alt="alt text" src="../image-18.png" /></p>
+<p><img alt="alt text" src="../image-24.png" /></p>
 <ul>
 <li><strong><em>Sample Config Sheet:</em></strong></li>
 </ul>
-<p><img alt="alt text" src="../image-19.png" /></p>
+<p><img alt="alt text" src="../image-25.png" /></p>
 <ul>
 <li><strong><em><code>restrict</code> function: This function closes the submission form on the Saturday after the submission deadline and reopens it on the Saturday of the next week.</em></strong></li>
 </ul>
-<p><img alt="alt text" src="../image-20.png" /></p>
+<p><img alt="alt text" src="../image-26.png" /></p>
 <h2 id="triggers">Triggers</h2>
 <p>These triggers define the schedule on which the functions run. Navigate to the triggers section on the left and add triggers using the blue button on the bottom right.</p>
 <ul>
 <li><strong><em>Trigger for <code>restrict</code>: This function runs every week, alternating between closing the form one week and reopening it the next.</em></strong></li>
 </ul>
-<p><img alt="alt text" src="../image-21.png" /></p>
+<p><img alt="alt text" src="../image-27.png" /></p>
 <ul>
 <li><strong><em>Trigger for <code>updateForm</code>: This function is intended to run every two weeks to update the form with each pay period. However, there is no biweekly trigger, and it does no harm to run it every week, so you can set it to run weekly like the <code>restrict</code> function.</em></strong></li>
 </ul>
-<p><img alt="alt text" src="../image-22.png" /></p></div>
+<p><img alt="alt text" src="../image-28.png" /></p></div>
             </div>
         </div>
 
