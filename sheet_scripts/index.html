@@ -181,9 +181,51 @@
 <p><strong><em><code>sortByManagerName</code>: Sorting the sheet of the pay period by the managers names.</em></strong>
 <img alt="alt text" src="../image-12.png" /></p>
 </li>
+<li>
+<p><strong><em><code>copySheet</code>: This function runs every two weeks. It creates a copy of the pay period that ended and sends it to the end of the spreadsheet. It then creates the sheet of the current pay period.</em></strong>
+<img alt="alt text" src="../image-29.png" /></p>
+</li>
+<li>
+<p><strong><em><code>refillFormulas</code>: This function makes sure the formulas are filled out accurately in the pay period sheet in case something happened in the previos pay period.</em></strong>
+<img alt="alt text" src="../image-30.png" /></p>
+</li>
+<li>
+<p><strong><em><code>lockPPSheet</code>: As the name says. It looks the sheet of the pay period that ended so that no further edits happen.</em></strong>
+<img alt="alt text" src="../image-31.png" /></p>
+</li>
+<li>
+<p><strong><em><code>lockPPSheet</code>: As the name says. It looks the sheet of the pay period that ended so that no further edits happen.</em></strong>
+<img alt="alt text" src="../image-31.png" /></p>
+</li>
+<li>
+<p><strong><em><code>Some helper functions (getSumFormula, getTasksFormula, getHoursFormula)</code>:</em></strong>
+<img alt="alt text" src="../image-32.png" /></p>
+</li>
+<li>
+<p><strong><em><code>justificationValuesOnly</code>: This function helps convert the cells of the tasks completed by students to be plain text instead of formulas. This helps make those readable to managers when approving hours.</em></strong>
+<img alt="alt text" src="../image-33.png" /></p>
+</li>
 </ul>
 <h1 id="triggers">Triggers</h1>
-<p>These triggers define the schedule on which the functions run. Navigate to the triggers section on the left and add triggers using the blue button on the bottom right.</p></div>
+<p>These triggers define the schedule on which the functions run. Navigate to the triggers section on the left and add triggers using the blue button on the bottom right.</p>
+<ul>
+<li><strong><em>Trigger for <code>copySheet</code>: This function runs every week. However, the function is defined to perform every two triggers so that the updating and copying happens every two weeks corresponding to a pay period.</em></strong></li>
+</ul>
+<p><img alt="alt text" src="../image-34.png" /></p>
+<ul>
+<li>
+<p><strong><em>Trigger for <code>contractorsSubmissionReminder</code>: This function runs every week and similar to the one above. It sends a reminder for students to submit hours.</em></strong>
+<img alt="alt text" src="../image-35.png" /></p>
+</li>
+<li>
+<p><strong><em>Trigger for <code>managersApprovalReminder</code>: This function runs every week and similar to the ones above. It sends a reminder for managers to approve hours.</em></strong>
+<img alt="alt text" src="../image-36.png" /></p>
+</li>
+<li>
+<p><strong><em>Trigger for <code>justificationValuesOnly</code>: This function runs slightly after copySheet function to make the tasks completed cells more readable.</em></strong>
+<img alt="alt text" src="../image-37.png" /></p>
+</li>
+</ul></div>
             </div>
         </div>
 
