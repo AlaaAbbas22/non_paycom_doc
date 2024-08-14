@@ -2,7 +2,7 @@
 
 This is the documentation for automation of the different sheets regarding Bill.com. It is designed to help you navigate, understand, pull information, make updates, or get started at the beginning of each year.
 
-The main sheet is here: [Approval Sheet of 2023/2024](https://docs.google.com/spreadsheets/d/1vwHoN5UWt_E6wVMi75IQpFi5OYvGdYd--cWBqI4lHpw/edit).
+The main sheet is here: [Approval Sheet of 2023/2024](https://docs.google.com/spreadsheets/d/1h--NTEjqyUzLndCXJbNB5af5pqv4vK5-beLuPCsWYnE/edit).
 
 To get started, you'll need the sheet from last year. Instead of building everything from scratch, we clone the sheet of the previous year, along with the automation scripts, and then update the necessary details.
 

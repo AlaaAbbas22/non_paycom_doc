@@ -3,7 +3,7 @@
 ## **Accessing the Sheets**
 *Accessing Scripts, Approval Sheet, and WS Payroll Log Form*
 
-[Approval Sheet of 2023/2024](https://docs.google.com/spreadsheets/d/1vwHoN5UWt_E6wVMi75IQpFi5OYvGdYd--cWBqI4lHpw/edit)
+[Approval Sheet of 2024/2025](https://docs.google.com/spreadsheets/d/1h--NTEjqyUzLndCXJbNB5af5pqv4vK5-beLuPCsWYnE/edit?gid=566099288#gid=566099288)
 
 - This spreadsheet is the starting point. It serves as Paycom for students not on Paycom. It collects data for the students' hours, and managers also approve or remove hours from students.
 - The script of the spreadsheet is the Google Apps Script associated with the Approval Sheet. You can find it by clicking on the **Extensions** tab in the spreadsheet and then selecting **Apps Script**.
@@ -14,7 +14,7 @@
 *Summary of the Process*
 
 ### Student Submissions
-- By the end of the pay period, students submit the hours they worked through the [WS Payroll Log Form](https://forms.gle/jCmz9uQmdrzB79Zn8). The responses are collected in a sheet within the Approval Sheet spreadsheet called `Submissions_Source`. This is not what gets processed.
+- By the end of the pay period, students submit the hours they worked through the [WS Payroll Log Form](https://docs.google.com/forms/d/1_FbkVJR0gg0L0E46f8f_G6xKe-pAX0lKjBb-j_yS07I/edit). The responses are collected in a sheet within the Approval Sheet spreadsheet called `Submissions_Source`. This is not what gets processed.
 - Another sheet called `Submissions` imports this data and associates a key with each entry at _Column A_ and _Column J_. The key is structured as: "[student email address] - [PP code]", for example, "alaa@uni.minerva.edu - PP1".
 - Before submission day (Thursday), an automatic reminder is sent to students to submit their hours. This reminder is managed by the `contractorsSubmissionReminder` function, which runs every two weeks.
 

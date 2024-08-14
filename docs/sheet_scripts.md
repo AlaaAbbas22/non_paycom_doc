@@ -57,8 +57,37 @@ Here will be the details of the code being used. It will be very detailed. Knowl
 - ***`sortByManagerName`: Sorting the sheet of the pay period by the managers names.***
 ![alt text](image-12.png)
 
+- ***`copySheet`: This function runs every two weeks. It creates a copy of the pay period that ended and sends it to the end of the spreadsheet. It then creates the sheet of the current pay period.***
+![alt text](image-29.png)
 
+- ***`refillFormulas`: This function makes sure the formulas are filled out accurately in the pay period sheet in case something happened in the previos pay period.***
+![alt text](image-30.png)
+
+- ***`lockPPSheet`: As the name says. It looks the sheet of the pay period that ended so that no further edits happen.***
+![alt text](image-31.png)
+
+- ***`lockPPSheet`: As the name says. It looks the sheet of the pay period that ended so that no further edits happen.***
+![alt text](image-31.png)
+
+- ***`Some helper functions (getSumFormula, getTasksFormula, getHoursFormula)`:***
+![alt text](image-32.png)
+
+- ***`justificationValuesOnly`: This function helps convert the cells of the tasks completed by students to be plain text instead of formulas. This helps make those readable to managers when approving hours.***
+![alt text](image-33.png)
 
 # Triggers
 
 These triggers define the schedule on which the functions run. Navigate to the triggers section on the left and add triggers using the blue button on the bottom right.
+
+- ***Trigger for `copySheet`: This function runs every week. However, the function is defined to perform every two triggers so that the updating and copying happens every two weeks corresponding to a pay period.***
+
+![alt text](image-34.png)
+
+- ***Trigger for `contractorsSubmissionReminder`: This function runs every week and similar to the one above. It sends a reminder for students to submit hours.***
+![alt text](image-35.png)
+
+- ***Trigger for `managersApprovalReminder`: This function runs every week and similar to the ones above. It sends a reminder for managers to approve hours.***
+![alt text](image-36.png)
+
+- ***Trigger for `justificationValuesOnly`: This function runs slightly after copySheet function to make the tasks completed cells more readable.***
+![alt text](image-37.png)
